@@ -3,14 +3,15 @@ package com.wipro.booking.kafkaConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.stereotype.Service;
 
-import com.wipro.booking.entity.Booking;
+
 import com.wipro.booking.service.BookingService;
 import com.wipro.booking.vo.PaymentResponse;
 
 
 
-
+@Service
 public class BookingConsumer {
 
 private final KafkaTemplate<String, PaymentResponse> kafkaTemplate;

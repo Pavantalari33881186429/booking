@@ -11,7 +11,7 @@ public class Booking {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long bookingId;
     private Long flightId;
-    private Long userId;
+    private String userName;
     private String status;
 	public Long getBookingId() {
 		return bookingId;
@@ -25,11 +25,11 @@ public class Booking {
 	public void setFlightId(Long flightId) {
 		this.flightId = flightId;
 	}
-	public Long getUserId() {
-		return userId;
+	public String getUserName() {
+		return userName;
 	}
-	public void setUserId(Long userId) {
-		this.userId = userId;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 	public String getStatus() {
 		return status;
@@ -37,17 +37,21 @@ public class Booking {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	public Booking(Long bookingId, Long flightId, Long userId, String status) {
+	public Booking(Long bookingId, Long flightId, String userName, String status) {
 		super();
 		this.bookingId = bookingId;
 		this.flightId = flightId;
-		this.userId = userId;
+		this.userName = userName;
 		this.status = status;
 	}
 	public Booking() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
+	@Override
+	public String toString() {
+		return "Booking [bookingId=" + bookingId + ", flightId=" + flightId + ", userName=" + userName + ", status="
+				+ status + "]";
+	}
     
 }

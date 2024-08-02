@@ -48,7 +48,7 @@ public class BookingServiceImpl implements BookingService {
         Booking booking = bookingRepository.findById(id).orElse(null);
         if (booking != null) {
             booking.setFlightId(bookingDetails.getFlightId());
-            booking.setUserId(bookingDetails.getUserId());
+            booking.setUserName(bookingDetails.getUserName());
             booking.setStatus(bookingDetails.getStatus());
             return bookingRepository.save(booking);
         }

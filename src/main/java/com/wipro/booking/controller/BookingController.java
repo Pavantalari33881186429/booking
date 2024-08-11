@@ -81,7 +81,12 @@ public class BookingController {
     @PostMapping("/payment")
     public void paymentProcessing(@RequestBody PaymentMessage message) {
     	
-    	bookingService.paymentProcessing(message);
+    	try {
+    		bookingService.paymentProcessing(message);
+    	}catch(Exception e) {
+    		bookingService.updateBookingStatus(message.getBookingId(), "failed");
+    	}
+    	
     	
     }
     
